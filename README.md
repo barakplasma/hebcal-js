@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/barakplasma/hebcal-js.svg?style=svg)](https://circleci.com/gh/barakplasma/hebcal-js)
+
+
 # Hebcal JavaScript
 
 Original C written by Danny Sadinoff, with portions by Michael J. Radwin.
