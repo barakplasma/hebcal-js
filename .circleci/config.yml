@@ -22,6 +22,7 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
+      - run: npm i -D jest-junit
 
       - save_cache:
           paths:
@@ -29,14 +30,11 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm i -D jest-junit
       - run:
           name: Run tests with JUnit as reporter
           command: npx jest --ci --runInBand --reporters=default --reporters=jest-junit
-          environment:
-            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
       - store_test_results:
-          path: reports/junit
+          path: ./
     
       # build package
       - run: npm run build
